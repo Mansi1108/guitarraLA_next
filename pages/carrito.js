@@ -23,7 +23,7 @@ const Carrito = ({carrito, actulizarCantidad, eliminarProducto}) => {
                     {carrito.lenght === 0 ? 'Carrito Vacio' : (
                         carrito.map( producto => (
                             <div 
-                            key={producto.id} 
+                            key={producto._id} 
                             className={styles.producto}>
                                 <div>
                                     <Image
@@ -43,7 +43,7 @@ const Carrito = ({carrito, actulizarCantidad, eliminarProducto}) => {
                                             className={styles.select}
                                             onChange={(e)=> actulizarCantidad({
                                                 cantidad: e.target.value,
-                                                id: producto.id
+                                                id: producto._id
                                             })}
                                         >
                                             <option value="1">1</option>
@@ -67,7 +67,7 @@ const Carrito = ({carrito, actulizarCantidad, eliminarProducto}) => {
                                     <button
                                         type="button"
                                         className={styles.eliminar}
-                                        onClick={() => eliminarProducto(producto.id)}
+                                        onClick={() => eliminarProducto(producto._id)}
                                     >X</button>
                                 </div>
 
